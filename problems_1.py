@@ -19,6 +19,21 @@ in the user’s greeting, and treat the user’s greeting case-insensitively.
 '''
 #############################################################################################################################
 
+def bank():
+    greet = input("Greet me:\n")
+    out = helper(greet)
+    print(out)
+
+def helper(h = ''):
+
+    h = h.lstrip().lower()
+    
+    if h[:5] == 'hello':
+        return "$0"
+    elif h[0] == 'h':
+        return "$20"
+    else:
+        return "$100"
 
 
 #############################################################################################################################
@@ -52,7 +67,27 @@ application/octet-stream instead, which is a common default.
 #############################################################################################################################
 
 def Federal():
-    pass 
+    name = input("Please enter the name of the file:\n")
+    out = file_identify(name)
+    print(out)
+
+def file_identify(last = ''):
+    if last.endswith(".gif"):
+        return "image/gif"
+    elif last.endswith((".jpg",".jpeg")):
+        return "image/jpeg"
+    elif last.endswith(".png"):
+        return "image/png"
+    elif last.endswith(".pdf"):
+        return "application/pdf"
+    elif last.endswith(".txt"):
+        return "text/plain"
+    elif last.endswith(".zip"):
+        return "application/zip"
+    else:
+        return "application/octet-stream"
+
+    
 
 
 #############################################################################################################################
@@ -76,6 +111,27 @@ so will your interpreter.py be an interpreter for math!
 '''
 #############################################################################################################################
 
+def interpreter():
+    expression = input("Enter any math expression:\n")
+    x, y, z = separator(expression)
+    if y == "+":
+        out = x + z
+    elif y == "-":
+        out = x - z
+    elif y == "*":
+        out = x * z
+    elif y == "/" and z != 0:
+        out = x/z
+    else:
+        out = "Invalid Expression"
+
+    print(float(out))
+
+def separator(exp = ''):
+    x,y,z =exp.split(" ")
+    return int(x), y, int(z)
+
+
 
 #############################################################################################################################
 '''
@@ -94,3 +150,24 @@ to the corresponding number of hours as a float. For instance, given a time
 like "7:30" (i.e., 7 hours and 30 minutes), convert should return 7.5 (i.e., 7.5 hours).
 '''
 #############################################################################################################################
+
+def meal():
+    time = input("Enter time in 24-hour time:\n")
+    num = converter(time)
+    if num >= 7.0 and num <= 8.0:
+        print('Breakfast Time')
+    elif num >= 12.0 and num <= 13.0:
+        print("Lunch Time")
+    elif num >= 18.0 and num <= 19.0:
+        print("Dinner Time")
+    else:
+        print(" ")
+    
+
+def converter(t = '7:30'):
+    a = t.replace(':', '.')
+    b, c = a.split(".") 
+    num = ((int(b) * 60) + int(c)) / 60
+    return num 
+
+    
