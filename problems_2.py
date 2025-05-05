@@ -14,8 +14,23 @@ of a variable in camel case and outputs the corresponding name in snake case.
 Assume that the user’s input will indeed be in camel case.
 '''
 ############################################################################################
+def camel():
+    camel_case = input("Enter the name of variable in camel case:\n")
+    snake_case = change(camel_case)
+    print(snake_case)
+
+def change(cam = '') -> str:
+    letters = []
+    for ind,alphabet in enumerate(cam):
+        if alphabet.islower():
+            letters.append(alphabet)
+        else:
+            letters.append('_' + alphabet)
+    snake = ''.join(letters)
+    return snake.lower()
 
 
+camel()
 ############################################################################################
 '''
 Suppose that a machine sells bottles of Coca-Cola (Coke) for 50 cents and 
