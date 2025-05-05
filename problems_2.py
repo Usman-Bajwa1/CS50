@@ -30,7 +30,6 @@ def change(cam = '') -> str:
     return snake.lower()
 
 
-camel()
 ############################################################################################
 '''
 Suppose that a machine sells bottles of Coca-Cola (Coke) for 50 cents and 
@@ -42,7 +41,17 @@ Assume that the user will only input integers, and ignore any integer that isnâ€
 an accepted denomination.
 '''
 ############################################################################################
-
+def coke():
+    amount = 50
+    print(f"Amount Due: {amount}")
+    while amount > 0:
+        payment = int(input("Insert Coin: "))
+        amount -= payment 
+        if amount > 0:
+            print(f"Amount Due: {amount}")
+        else:
+            print(f"Change Owed: {amount * -1}")
+        
 
 ############################################################################################
 '''
@@ -53,6 +62,7 @@ outputs that same text but with all vowels (A, E, I, O, and U) omitted, whether 
 in uppercase or lowercase.
 '''
 ############################################################################################
+
 
 
 ############################################################################################
@@ -88,6 +98,10 @@ def is_valid(s):
 main()
 '''
 ############################################################################################
+
+
+
+  
 
 
 ############################################################################################
