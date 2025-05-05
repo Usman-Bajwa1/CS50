@@ -63,6 +63,18 @@ in uppercase or lowercase.
 '''
 ############################################################################################
 
+def twttr():
+    text = input("Input: ")
+    out = vow(text)
+    print(f"Output: {out}")
+
+def vow(word = '') -> str:
+    letters = []
+    vowels = ['a','e','i','o','u']
+    for alphabet in word:
+        if alphabet.lower() not in vowels: 
+            letters.append(alphabet)
+    return ''.join(letters)
 
 
 ############################################################################################
