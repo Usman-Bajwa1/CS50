@@ -111,6 +111,7 @@ main()
 '''
 ############################################################################################
 
+
 def plates():
     plate = input("Plate: ")
     if is_valid(plate):
@@ -118,45 +119,10 @@ def plates():
     else:
         print("Invalid")
 
-
-def is_valid(s = 'CS50') -> bool:
-
+def is_valid(s = ''):
     letters = []
-    for alphabets in s:
-        letters.append(alphabets)
-    
-    for l in letters:
-        if not (l.isalpha() or l.isnumeric()):
-            return False
-        else:
-            pass 
-
-    if len(letters) >= 2 and len(letters) <= 6:
-        if letters[0].isnumeric() or letters[1].isnumeric():
-            return False 
-        else: 
-            if (letters[2].isnumeric() or letters[3].isnumeric()  or letters[4].isnumeric()) and letters[5].isalpha():
-                return False 
-            else:
-                if letters[2].isnumeric() and letters[2] == '0':
-                    return False
-                elif letters[2].isalpha() and letters[3].isnumeric() and letters[3] == '0':
-                    return False 
-                elif letters[3].isalpha() and letters[3].isalpha() and letters[4].isnumeric() and letters[4] == '0':
-                    return False
-                elif letters[3].isalpha() and letters[3].isalpha() and letters[4].alpha() and letters[5].isnumeric() and letters[5] == '0':
-                    return False
-                else:
-                    return True 
-    else:
-        return False
-
-letters = ['c','s','5','0']
-for l in letters:
-    if not (l.isalpha() or l.isnumeric()):
-        print('no')
-    else:
-        pass 
+    for a in s:
+        pass
 
 
   
