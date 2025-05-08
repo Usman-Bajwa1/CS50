@@ -21,6 +21,7 @@ for input and then outputs that same input,
 replacing each space with ... (i.e., three periods).
 '''
 #############################################################################################################################
+
 def playback_speed():
     play = input("Talk to me!!!:\n")
     print("\nThat is fast!!!, try this:")
@@ -124,5 +125,3 @@ def dollars_to_float(d):
 
 def percent_to_float(p):
     return float(p.strip('%')) / 100
-
-Tip_Calculator()

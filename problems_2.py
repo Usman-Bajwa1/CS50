@@ -111,6 +111,52 @@ main()
 '''
 ############################################################################################
 
+def plates():
+    plate = input("Plate: ")
+    if is_valid(plate):
+        print("Valid")
+    else:
+        print("Invalid")
+
+
+def is_valid(s = 'CS50') -> bool:
+
+    letters = []
+    for alphabets in s:
+        letters.append(alphabets)
+    
+    for l in letters:
+        if not (l.isalpha() or l.isnumeric()):
+            return False
+        else:
+            pass 
+
+    if len(letters) >= 2 and len(letters) <= 6:
+        if letters[0].isnumeric() or letters[1].isnumeric():
+            return False 
+        else: 
+            if (letters[2].isnumeric() or letters[3].isnumeric()  or letters[4].isnumeric()) and letters[5].isalpha():
+                return False 
+            else:
+                if letters[2].isnumeric() and letters[2] == '0':
+                    return False
+                elif letters[2].isalpha() and letters[3].isnumeric() and letters[3] == '0':
+                    return False 
+                elif letters[3].isalpha() and letters[3].isalpha() and letters[4].isnumeric() and letters[4] == '0':
+                    return False
+                elif letters[3].isalpha() and letters[3].isalpha() and letters[4].alpha() and letters[5].isnumeric() and letters[5] == '0':
+                    return False
+                else:
+                    return True 
+    else:
+        return False
+
+letters = ['c','s','5','0']
+for l in letters:
+    if not (l.isalpha() or l.isnumeric()):
+        print('no')
+    else:
+        pass 
 
 
   
@@ -130,3 +176,34 @@ as text. Capitalization aside, assume that users will input fruits exactly as wr
 in the poster (e.g., strawberries, not strawberry). Ignore any input that isn’t a fruit.
 '''
 ############################################################################################
+
+def nutrition():
+    fruit = input("Item: ")
+
+    fruit_calories = {
+        "apple":130, 
+        "avocado":50,
+        "banana":110,
+        "cantaloupe":50,
+        "grapefruit":60,
+        "grapes":90,
+        "honeydew melon":50,
+        "kiwifruit":90,
+        "lemon":15,
+        "lime":20,
+        "nectarine":60,
+        "orange":80,
+        "peach":60,
+        "pear":100,
+        "pineapple":50,
+        "plums":70,
+        "strawberries":50,
+        "sweet cherries":100,
+        "tangerine": 50,
+        "watermelon":80
+    }
+
+    print("Calories:",fruit_calories[fruit.lower()])
+        
+
+nutrition()
