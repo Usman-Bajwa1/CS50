@@ -119,13 +119,45 @@ def plates():
     else:
         print("Invalid")
 
-def is_valid(s = ''):
-    letters = []
-    for a in s:
-        pass
+def is_valid(s =''):
+  letters = []
+  for l in s:
+    letters.append(l)
+  for l in letters:
+    if l.isalpha() or l.isnumeric():                     # No period, space, punctuation
+      pass
+    else:
+      return False
+  if len(letters) > 6 or len(letters) < 2:               # Character condition
+    return False
+  elif letters[0].isnumeric() or letters[1].isnumeric(): # Two letter condition
+    return False
+  elif check(letters) is False:
+    return False
+  elif num_check(s) is False:
+    return False
+  else:
+    return True  
 
+def check(s = []):   
+  '''
+  Check if the first number is zero than returns False
+  '''
+  for i in range(len(s)):
+    if s[i].isnumeric() and s[i] == '0':
+      return False 
+    elif s[i].isnumeric() and s[i] != '0':
+      break
+def num_check(s = ''):
+  '''
+  Check if numerical values are in the middle, so returns false
+  '''
+  for i in range(len(s)):
+    if s[i].isnumeric() and s[i:].isnumeric() is False:
+      return False 
+    else:
+      pass
 
-  
 
 
 ############################################################################################
