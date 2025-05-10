@@ -158,6 +158,8 @@ def num_check(s = ''):
     else:
       pass
 
+plates()
+
 
 
 ############################################################################################
@@ -203,5 +205,3 @@ def nutrition():
 
     print("Calories:",fruit_calories[fruit.lower()])
         
-
-nutrition()
