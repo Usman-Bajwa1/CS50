@@ -80,9 +80,6 @@ def felipe_taqueria():
             break
 
             
-
-
-
 #############################################################################################################################
 '''
 Suppose that you’re in the habit of making a list of items you need from the grocery store.
@@ -93,6 +90,20 @@ No need to pluralize the items. Treat the user’s input case-insensitively.
 '''
 
 #############################################################################################################################
+
+def grocery():
+    a = {}
+    while True:
+        try:
+            b = input()
+            a[b.upper()] += 1
+        except KeyError:
+            a[b.upper()] = 1
+        except EOFError:
+            break
+
+
+
 
 #############################################################################################################################
 '''
