@@ -11,6 +11,29 @@ Be sure to catch any exceptions like ValueError or ZeroDivisionError.
 '''
 #############################################################################################################################
 
+def fuel():
+    while True:
+        try:
+            n, d = str_split("Fraction: ")
+            numerator, denominator = int(n), int(d) 
+        except ValueError:
+            pass
+        else:
+            try:
+                frac = (numerator / denominator) * 100
+            except ZeroDivisionError:
+                pass
+            else:
+                break
+    print(f"{int(frac)}%")
+
+def str_split(prompt:str):
+    z = input(prompt)
+    a,b = z.split('/')
+    return a, b
+
+
+
 #############################################################################################################################
 '''
 One of the most popular places to eat in Harvard Square is Felipe’s Taqueria, which offers a menu of entrees, per the dict below,
