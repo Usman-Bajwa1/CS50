@@ -101,6 +101,10 @@ def grocery():
             a[b.upper()] = 1
         except EOFError:
             break
+        
+    sorted_items = sorted(a.keys())
+    for key in sorted_items:
+        print(a[key],key)
 
 
 
