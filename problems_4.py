@@ -96,6 +96,23 @@ The program should ultimately output the user’s score: the number of correct a
 Structure your program as follows, wherein get_level prompts (and, if need be, re-prompts) the user for a level and 
 returns 1, 2, or 3, and generate_integer returns a randomly generated non-negative integer with level digits or raises a 
 ValueError if level is not 1, 2, or 3:
+import random
+
+
+def main():
+    ...
+
+
+def get_level():
+    ...
+
+
+def generate_integer(level):
+    ...
+
+
+if __name__ == "__main__":
+    main()
 '''
 #############################################################################################################################
 
@@ -104,19 +121,22 @@ ValueError if level is not 1, 2, or 3:
 
 #############################################################################################################################
 '''
-I’m thinking of a number between 1 and 100…
+Bitcoin is a form of digital currency, otherwise known as cryptocurrency. Rather than rely on a central authority like a bank, 
+Bitcoin instead relies on a distributed network, otherwise known as a blockchain, to record transactions.
+Because there’s demand for Bitcoin (i.e., users want it), users are willing to buy it, as by exchanging one currency (e.g., USD) for Bitcoin.
+In a file called bitcoin.py, implement a program that:
+Expects the user to specify as a command-line argument the number of Bitcoins, 
+,that they would like to buy. If that argument cannot be converted to a float, the program should exit via sys.exit with an error message.
+Queries the API for the CoinCap Bitcoin Price Index at rest.coincap.io/v3/assets/bitcoin?apiKey=YourApiKey. You should replace 
+YourApiKey with the actual API key you obtained from your CoinCap account dashboard, which returns a JSON object, among whose 
+nested keys is the current price of Bitcoin as a float. Be sure to catch any exceptions, as with code like:
 
-What is it?
-In a file called game.py, implement a program that:
+import requests
 
-Prompts the user for a level, 
-. If the user does not input a positive integer, the program should prompt again.
-Randomly generates an integer between 1 and 
-, inclusive, using the random module.
-Prompts the user to guess that integer. If the guess is not a positive integer, the program should prompt the user again.
-If the guess is smaller than that integer, the program should output Too small! and prompt the user again.
-If the guess is larger than that integer, the program should output Too large! and prompt the user again.
-If the guess is the same as that integer, the program should output Just right! and exit.
+try:
+    ...
+except requests.RequestException:
+    ...
 '''
 #############################################################################################################################
 
