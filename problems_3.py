@@ -140,4 +140,37 @@ Assume that every month has no more than 31 days; no need to validate whether a 
 #############################################################################################################################
 
 def outdated():
-    pass
+  months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+]
+  while True:
+    dat = input()
+    try:
+      a = dat.split('/')
+      int(a[0])   
+      return "-".join([a[2],a[0],a[1]])
+    except:
+      try:
+        b = dat.split(' ')
+        int(b[1]) 
+      except:
+        try:
+          b[1] = b[1].strip(',')
+          for ind, month in enumerate(months):
+            if b[0].lower() == month.lower():
+              b[0] = str(ind+1)
+          int(b[0])
+          return "-".join([b[2],b[0],b[1]])
+        except:
+          pass
