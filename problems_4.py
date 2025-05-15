@@ -9,8 +9,13 @@ of that str, converting any codes (or aliases) therein to their corresponding em
 '''
 #############################################################################################################################
 
+import emoji
 
+def emojized():
+    emo = input("Input: ")
+    print(emoji.emojize(f'Output: {emo}'))
 
+emojized()
 
 
 #############################################################################################################################
