@@ -15,7 +15,6 @@ def emojized():
     emo = input("Input: ")
     print(emoji.emojize(f'Output: {emo}'))
 
-emojized()
 
 
 #############################################################################################################################
@@ -32,6 +31,13 @@ program should exit via sys.exit with an error message.
 '''
 #############################################################################################################################
 
+import os 
+import sys
+from pyfiglet import Figlet
+ 
+def fig():
+    inp = input()
+    
 
 
             
