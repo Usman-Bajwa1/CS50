@@ -32,12 +32,18 @@ program should exit via sys.exit with an error message.
 #############################################################################################################################
 
 import os 
-import sys
-from pyfiglet import Figlet
+import argparse
+import pyfiglet 
  
 def fig():
     inp = input()
     
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f","--font",
+                        type = str,
+                        default='slant')
+    args = parser.parse_args()
+    f = pyfiglet.figlet_format(inp, font = args.f)
 
 
             
