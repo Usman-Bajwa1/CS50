@@ -37,19 +37,22 @@ import pyfiglet
 import random
  
 def fig():
-    inp = input()
+    inp = input("Input: ")
     b = pyfiglet.FigletFont.getFonts()
-    ind = int(random.uniform(0,len(b)))
+    ind = random.randint(0,len(b))
     print(b[ind])
+    try:
+        parser = argparse.ArgumentParser(description="Figlet Method")
+        parser.add_argument("-f","--font",
+                            type = str,
+                            default=b[ind],
+                            help= "Font for figlet")
+        args = parser.parse_args()
     
-    parser = argparse.ArgumentParser(description="Figlet Method")
-    parser.add_argument("-f","--font",
-                        type = str,
-                        default='slant',
-                        help= "Font for figlet")
-    args = parser.parse_args()
-    f = pyfiglet.figlet_format(inp, font = args.font)
-    print(f)
+        f = pyfiglet.figlet_format(inp, font = args.font)
+        print(f"Output: {f}")
+    except:
+        sys.exit("Invalid Usuage")
 
 fig()
 
