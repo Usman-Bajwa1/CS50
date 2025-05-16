@@ -38,12 +38,16 @@ import pyfiglet
 def fig():
     inp = input()
     
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="Figlet Method")
     parser.add_argument("-f","--font",
                         type = str,
-                        default='slant')
+                        default='slant',
+                        help= "Font for figlet")
     args = parser.parse_args()
-    f = pyfiglet.figlet_format(inp, font = args.f)
+    f = pyfiglet.figlet_format(inp, font = args.font)
+    print(f)
+
+fig()
 
 
             
