@@ -31,12 +31,16 @@ program should exit via sys.exit with an error message.
 '''
 #############################################################################################################################
 
-import os 
+import sys
 import argparse
 import pyfiglet 
+import random
  
 def fig():
     inp = input()
+    b = pyfiglet.FigletFont.getFonts()
+    ind = int(random.uniform(0,len(b)))
+    print(b[ind])
     
     parser = argparse.ArgumentParser(description="Figlet Method")
     parser.add_argument("-f","--font",
