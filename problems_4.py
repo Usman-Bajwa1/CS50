@@ -54,7 +54,6 @@ def fig():
         sys.exit("Invalid Usuage")
 
 
-
             
 #############################################################################################################################
 '''
@@ -101,6 +100,26 @@ If the guess is larger than that integer, the program should output Too large! a
 If the guess is the same as that integer, the program should output Just right! and exit.
 '''
 #############################################################################################################################
+import random
+
+def game():
+    while True:
+        n = int(input("Level: "))
+        if n > 0:
+            break
+    
+    hid = random.randint(1,n)
+    while True:
+        guess = int(input("Guess: "))
+        if guess > 0:
+            guess = int(input("Guess"))
+    while True:
+        if hid == guess:
+            print("Just right!")
+            break
+        elif hid < guess:
+            print("Too small!")
+        elif hid > n:
 
 
 
