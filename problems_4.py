@@ -40,7 +40,6 @@ def fig():
     inp = input("Input: ")
     b = pyfiglet.FigletFont.getFonts()
     ind = random.randint(0,len(b))
-    print(b[ind])
     try:
         parser = argparse.ArgumentParser(description="Figlet Method")
         parser.add_argument("-f","--font",
@@ -54,7 +53,6 @@ def fig():
     except:
         sys.exit("Invalid Usuage")
 
-fig()
 
 
             
