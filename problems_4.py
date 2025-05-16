@@ -103,23 +103,33 @@ If the guess is the same as that integer, the program should output Just right! 
 import random
 
 def game():
-    while True:
-        n = int(input("Level: "))
-        if n > 0:
-            break
+    
+    n = get_num()
     
     hid = random.randint(1,n)
+    
     while True:
-        guess = int(input("Guess: "))
-        if guess > 0:
-            guess = int(input("Guess"))
-    while True:
+        guess = get_guess()
         if hid == guess:
             print("Just right!")
             break
-        elif hid < guess:
+        elif hid > guess:
             print("Too small!")
-        elif hid > n:
+        elif hid < guess:
+            print("Too large")
+
+def get_num():
+    while True:
+        n = int(input("Level: "))
+        if n > 0:
+            return n
+def get_guess():
+    while True:
+        n = int(input("Guess: "))
+        if n > 0:
+            return n
+
+
 
 
 
