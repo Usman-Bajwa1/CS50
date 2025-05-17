@@ -169,17 +169,20 @@ if __name__ == "__main__":
 
 def little_professor():
     level = get_level()
+    score = 0
     for i in range(10):
         x, y = generate_integer(level)
         for i in range(3):
             try:
                 ans = int(input(f"{x} + {y} = "))
                 if ans == x + y:
+                    score += 1
                     break
                 else:
                     print("EEE")
             except ValueError:
                 print("EEE")
+    print(f"Score: {score}")
 
 def get_level():
     while True:
@@ -190,20 +193,18 @@ def get_level():
 
 def generate_integer(level):
     if level == 1:
-        x = random.randint(1,10)
-        y = random.randint(1,10)
+        x = random.randint(1,9)
+        y = random.randint(1,9)
     elif level == 2:
-        x = random.randint(10,100)
-        y = random.randint(10,100)
+        x = random.randint(10,99)
+        y = random.randint(10,99)
     else:
-        x = random.randint(100,1000)
-        y = random.randint(100,1000)
+        x = random.randint(100,999)
+        y = random.randint(100,999)
     return x, y
         
 
 
-if __name__ == "__main__":
-    little_professor()
 
 
 #############################################################################################################################
