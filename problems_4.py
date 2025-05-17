@@ -188,7 +188,17 @@ def get_level():
             return n
 
 
-
+def generate_integer(level):
+    if level == 1:
+        x = random.randint(1,10)
+        y = random.randint(1,10)
+    elif level == 2:
+        x = random.randint(10,100)
+        y = random.randint(10,100)
+    else:
+        x = random.randint(100,1000)
+        y = random.randint(100,1000)
+    return x, y
         
 
 
