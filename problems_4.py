@@ -79,6 +79,10 @@ Adieu, adieu, to Liesl, Friedrich, Louisa, Kurt, Brigitta, Marta, and Gretl
 
 #############################################################################################################################
 
+import inflect
+
+p = inflect.engine()
+
 
 
 
