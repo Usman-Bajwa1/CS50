@@ -81,7 +81,18 @@ Adieu, adieu, to Liesl, Friedrich, Louisa, Kurt, Brigitta, Marta, and Gretl
 
 import inflect
 
-p = inflect.engine()
+def adieu():
+    p = inflect.engine()
+    names = []
+    while True:
+        try:
+            name = input("Name: ")
+            names.append(name)
+        except EOFError:
+            print(f"\nAdieu, adieu, to {p.join(names)}")
+            break
+adieu()
+
 
 
 
