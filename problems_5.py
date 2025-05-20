@@ -99,6 +99,7 @@ if __name__ == "__main__":
 
 Then, in a file called test_fuel.py, implement two or more functions that collectively test your implementations of convert and 
 gauge thoroughly, each of whose names should begin with test_ so that you can execute your tests with:
+pytest test_fuel.py
 '''
 #############################################################################################################################
 
