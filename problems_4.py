@@ -243,4 +243,11 @@ except requests.RequestException:
 '''
 #############################################################################################################################
 
-# The api for this is not available
+import requests
+import sys
+
+
+try:
+    pass
+except requests.RequestException:
+    sys.exit("Missin command line argument")
