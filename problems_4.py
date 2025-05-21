@@ -243,15 +243,15 @@ import sys
 import os
 import json
 
-
-try:
-    response = requests.get("http://rest.coincap.io/v3/assets/bitcoin?apiKey=" + os.environ.get("CAP_COIN_API"))
-    o = response.json()
-    price = o["data"]["priceUsd"]
-    print(f"${float(price)} * {float(sys.argv[1])}")
-except requests.RequestException:
-    sys.exit("Missing command line argument")
-except ValueError:
-    sys.exit("Command-line argument not a number")
+def bitcoin():
+    try:
+        response = requests.get("http://rest.coincap.io/v3/assets/bitcoin?apiKey=" + os.environ.get("CAP_COIN_API"))
+        o = response.json()
+        price = o["data"]["priceUsd"]
+        print(f"${float(price) * float(sys.argv[1]):.4f}")
+    except requests.RequestException:
+        sys.exit("Missing command line argument")
+    except ValueError:
+        sys.exit("Command-line argument not a number")
 
 
