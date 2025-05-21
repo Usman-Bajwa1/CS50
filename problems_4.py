@@ -16,7 +16,6 @@ def emojized():
     print(emoji.emojize(f'Output: {emo}'))
 
 
-
 #############################################################################################################################
 '''
 Among the fonts supported by FIGlet are those at figlet.org/examples.html.
@@ -213,9 +212,6 @@ def generate_integer(level):
         y = random.randint(100,999)
     return x, y
         
-
-
-
 
 #############################################################################################################################
 '''
