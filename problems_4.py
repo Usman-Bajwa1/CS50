@@ -91,11 +91,6 @@ def adieu():
         except EOFError:
             print(f"\nAdieu, adieu, to {p.join(names)}")
             break
-adieu()
-
-
-
-
 
 
 #############################################################################################################################
@@ -249,8 +244,10 @@ import os
 import json
 
 
-try:
-    response = requests.get("rest.coincap.io/v3/assets/bitcoin?apiKey=" + os.environ.get("CAP_COIN_API"))
-    print(response.json())
-except requests.RequestException:
-    sys.exit("Missin command line argument")
+#try:
+response = requests.get("http://rest.coincap.io/v3/assets/bitcoin?apiKey=" + os.environ.get("CAP_COIN_API"))
+print(response.json())
+#except requests.RequestException:
+#    sys.exit("Missin command line argument")
+
+
