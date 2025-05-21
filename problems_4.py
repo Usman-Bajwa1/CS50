@@ -245,9 +245,12 @@ except requests.RequestException:
 
 import requests
 import sys
+import os
+import json
 
 
 try:
-    pass
+    response = requests.get("rest.coincap.io/v3/assets/bitcoin?apiKey=" + os.environ.get("CAP_COIN_API"))
+    print(response.json())
 except requests.RequestException:
     sys.exit("Missin command line argument")
