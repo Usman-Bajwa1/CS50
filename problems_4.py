@@ -36,23 +36,17 @@ import pyfiglet
 import random
  
 def fig():
-    inp = input("Input: ")
-    b = pyfiglet.FigletFont.getFonts()
-    ind = random.randint(0,len(b))
     try:
-        parser = argparse.ArgumentParser(description="Figlet Method")
-        parser.add_argument("-f","--font",
-                            type = str,
-                            default=b[ind],
-                            help= "Font for figlet")
-        args = parser.parse_args()
-    
-        f = pyfiglet.figlet_format(inp, font = args.font)
+        inp = input("Input: ")
+        b = pyfiglet.FigletFont.getFonts()
+        ind = random.randint(0,len(b))
+        
+        f = pyfiglet.figlet_format(inp, font = sys.argv[1])
         print(f"Output: {f}")
-    except:
+    except IndexError:
         sys.exit("Invalid Usuage")
 
-
+fig()
             
 #############################################################################################################################
 '''
