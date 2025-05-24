@@ -95,11 +95,18 @@ pytest test_plates.py
 from problems_2 import is_valid, num_check, check
 def plates():
     test_check()
+    test_numcheck()
 
 def test_check():
     assert check(['s','b','0','1']) == False
     assert check(['S','2','0']) != False
-plates()
+
+def test_isvalid():
+    pass
+
+def test_numcheck():
+    assert num_check("pl50cc") == False
+    assert num_check("Cs50") != False
 
 
 #############################################################################################################################
