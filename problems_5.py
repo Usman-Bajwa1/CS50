@@ -57,8 +57,11 @@ pytest test_bank.py
 
 from problems_1 import helper
 
-def test_bank()
-       
+def test_bank():
+    assert helper("hello") == "$0"
+    assert helper("hi") == "$20"
+    assert helper("greatt") == "$100" 
+     
 #############################################################################################################################
 '''
 In a file called plates.py, reimplement Vanity Plates from Problem Set 2, restructuring your code per the below, wherein is_valid 

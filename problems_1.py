@@ -35,7 +35,6 @@ def helper(h = ''):
     else:
         return "$100"
 
-
 #############################################################################################################################
 '''
 Even though Windows and macOS sometimes hide them, most files have file extensions,
