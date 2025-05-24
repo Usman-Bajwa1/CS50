@@ -57,10 +57,19 @@ pytest test_bank.py
 
 from problems_1 import helper
 
-def test_bank():
+def bank():
+    test_hello()
+    test_hi()
+    test_greatt()
+
+def test_hello():
     assert helper("hello") == "$0"
+def test_hi():
     assert helper("hi") == "$20"
-    assert helper("greatt") == "$100" 
+def test_greatt():
+    assert helper("greatt") == "$100"
+
+
      
 #############################################################################################################################
 '''
