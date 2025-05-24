@@ -97,6 +97,7 @@ def plates():
     test_check()
     test_numcheck()
     test_punctuation()
+    test_character_limit()
 
 def test_check():
     assert check(['s','b','0','1']) == False
@@ -105,13 +106,19 @@ def test_check():
 def test_punctuation():
     assert is_valid("BP,40") == False
     assert is_valid("Bp40") != False
-    
+
+def test_character_limit():
+    assert is_valid("aaaaaaa") == False
+    assert is_valid("aa") != False
+    assert is_valid("aaaa") != False
+    assert is_valid("a") == False
+    assert is_valid("aaaaaa") != False
 
 def test_numcheck():
     assert num_check("pl50cc") == False
     assert num_check("Cs50") != False
 
-plates()
+
 #############################################################################################################################
 '''
 In a file called fuel.py, reimplement Fuel Gauge from Problem Set 3, restructuring your code per the below, wherein:
