@@ -23,10 +23,16 @@ pytest test_twttr.py
 from problems_2 import vow
 
 def test_vow():
-    vow("")
-    for vowel in ['a','e','i','o','u']:
-        for letter in 
+    out = vow("twitter")
+    test = [i for i in out]
+    assert 'a' not in test
+    assert 'u' not in test
+    assert 'o' not in test
+    assert 'e' not in test
+    assert 'i' not in test
+    
 
+test_vow()
 #############################################################################################################################
 '''
 In a file called bank.py, reimplement Home Federal Savings Bank from Problem Set 1, restructuring your code per the below,

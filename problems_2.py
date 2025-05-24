@@ -158,10 +158,6 @@ def num_check(s = ''):
     else:
       pass
 
-plates()
-
-
-
 ############################################################################################
 '''
 The U.S. Food & Drug Adminstration (FDA) offers downloadable/printable posters 
