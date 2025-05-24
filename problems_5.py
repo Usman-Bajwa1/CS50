@@ -22,7 +22,7 @@ pytest test_twttr.py
 
 from problems_2 import vow
 
-def test_vow():
+def test_twttr():
     out = vow("twitter")
     test = [i for i in out]
     assert 'a' not in test
@@ -31,8 +31,6 @@ def test_vow():
     assert 'e' not in test
     assert 'i' not in test
     
-
-test_vow()
 #############################################################################################################################
 '''
 In a file called bank.py, reimplement Home Federal Savings Bank from Problem Set 1, restructuring your code per the below,
@@ -57,7 +55,10 @@ pytest test_bank.py
 '''
 #############################################################################################################################
 
-            
+from problems_1 import helper
+
+def test_bank()
+       
 #############################################################################################################################
 '''
 In a file called plates.py, reimplement Vanity Plates from Problem Set 2, restructuring your code per the below, wherein is_valid 
