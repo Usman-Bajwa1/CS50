@@ -151,7 +151,7 @@ pytest test_fuel.py
 '''
 #############################################################################################################################
 
-from problems_3 import fuel,str_split
+from problems_3 import str_split
 
 def test_fuel():
     test_split()
