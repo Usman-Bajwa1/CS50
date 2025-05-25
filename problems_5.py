@@ -159,4 +159,3 @@ def test_fuel():
 def test_split():
     assert str_split("5/10") == ("5", "10")
     
-test_fuel()
