@@ -21,11 +21,19 @@ def fuel():
         else:
             try:
                 frac = (numerator / denominator) * 100
+                if frac > 100:
+                    raise ValueError
+                elif frac <= 1:
+                   return "E"
+                elif frac >= 99:
+                   return "F"
+                else:
+                    return f"{int(frac)}%"
             except ZeroDivisionError:
                 pass
-            else:
-                break
-    return f"{int(frac)}%"
+            except ValueError:
+               pass
+    
 
 def str_split(prompt:str):
     z = input(prompt)
@@ -33,7 +41,7 @@ def str_split(prompt:str):
     return a, b
 
 
-
+print(fuel())
 #############################################################################################################################
 '''
 One of the most popular places to eat in Harvard Square is Felipe’s Taqueria, which offers a menu of entrees, per the dict below,
