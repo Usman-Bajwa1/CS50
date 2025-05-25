@@ -14,7 +14,8 @@ Be sure to catch any exceptions like ValueError or ZeroDivisionError.
 def fuel():
     while True:
         try:
-            n, d = str_split("Fraction: ")
+            z = input("Fraction: ")
+            n, d = str_split(z)
             numerator, denominator = int(n), int(d) 
         except ValueError:
             pass
@@ -36,12 +37,9 @@ def fuel():
     
 
 def str_split(prompt:str):
-    z = input(prompt)
-    a,b = z.split('/')
+    a,b = prompt.split('/')
     return a, b
 
-
-print(fuel())
 #############################################################################################################################
 '''
 One of the most popular places to eat in Harvard Square is Felipe’s Taqueria, which offers a menu of entrees, per the dict below,

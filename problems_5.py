@@ -151,4 +151,12 @@ pytest test_fuel.py
 '''
 #############################################################################################################################
 
+from problems_3 import fuel,str_split
 
+def test_fuel():
+    test_split()
+
+def test_split():
+    assert str_split("5/10") == ("5", "10")
+    
+test_fuel()
