@@ -25,7 +25,7 @@ def fuel():
                 pass
             else:
                 break
-    print(f"{int(frac)}%")
+    return f"{int(frac)}%"
 
 def str_split(prompt:str):
     z = input(prompt)
