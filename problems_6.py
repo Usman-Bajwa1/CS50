@@ -111,11 +111,6 @@ def pizza():
         return tabulate(table,headers='firstrow', tablefmt='grid')
     else:
         sys.exit("Not a csv file")
-            
-    
-
-print(pizza())
-
 
      
 #############################################################################################################################
@@ -197,7 +192,30 @@ If the user does not provide exactly two command-line arguments, or if the first
 '''
 #############################################################################################################################
 
+import sys
+import csv
 
+def scourgify():
+    #if len(sys.argv) < 3:
+    #    sys.exit("Too few command-line arguments")
+    #elif len(sys.argv) > 3:
+    #    sys.exit("Too many command-line arguments")
+#
+    input_file = sys.argv[1]
+    #output_file = sys.argv[2]
+    ordered_name = {}
+
+    with open(input_file, 'r') as file:
+        content  = csv.DictReader(file)
+        for row in content:
+            name_list = row["name"].split(',')
+            house = row['house']
+            ordered_name['first'] = name_list[1].lstrip()
+            ordered_name['last'] = name_list[0]
+            ordered_name['house'] = house 
+    print(ordered_name)
+
+scourgify()
 
 
 #############################################################################################################################
