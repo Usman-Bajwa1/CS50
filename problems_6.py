@@ -202,7 +202,7 @@ def scourgify():
     #    sys.exit("Too many command-line arguments")
 #
     input_file = sys.argv[1]
-    #output_file = sys.argv[2]
+    output_file = sys.argv[2]
     ordered_name = {}
 
     with open(input_file, 'r') as file:
@@ -213,7 +213,12 @@ def scourgify():
             ordered_name['first'] = name_list[1].lstrip()
             ordered_name['last'] = name_list[0]
             ordered_name['house'] = house 
-    print(ordered_name)
+            with open(output_file, 'a') as file:
+                fieldnames = ['first', 'last', 'house']
+                writer = csv.DictWriter(file, fieldnames=fieldnames)
+                writer.writeheader()
+                writer.writerow(ordered_name)
+                
 
 scourgify()
 
