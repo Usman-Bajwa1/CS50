@@ -28,20 +28,31 @@ Assume that any line that starts with #, optionally preceded by whitespace, is a
 comment.) Assume that any line that only contains whitespace is blank.
 '''
 #############################################################################################################################
-line_count = 0
-lines = []
-with open("problems_7.py", "r") as file:
-    for line in file:
-        if line.lstrip().startswith('#'):
-            pass
-        elif len(line.lstrip()) == 0:
-            print(line)
-        else:
-            line_count += 1
-        #lines.append(line.lstrip())
-    #print(lines)
-    print(line_count)
+
+import sys
+def lines():
+    line_count = 0
     
+    if len(sys.argv) < 2:
+        sys.exit("Too few command-line arguments")
+    elif len(sys.argv) > 2:
+        sys.exit("Too many command-line arguments")
+    
+    name = sys.argv[1]
+    if name[-3:] == ".py":
+        with open(name, "r") as file:
+            for line in file:
+                if line.lstrip().startswith('#'):
+                    pass
+                elif len(line.lstrip()) == 0:
+                    pass
+                else:
+                    line_count += 1
+            return line_count
+    else:
+        sys.exit("Not a python file")
+
+lines()
 #############################################################################################################################
 '''
 Perhaps the most popular place for pizza in Harvard Square is Pinocchio’s Pizza & Subs, aka Noch’s, known for its Sicilian pizza, 
