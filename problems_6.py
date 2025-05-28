@@ -28,8 +28,19 @@ Assume that any line that starts with #, optionally preceded by whitespace, is a
 comment.) Assume that any line that only contains whitespace is blank.
 '''
 #############################################################################################################################
-
-
+line_count = 0
+lines = []
+with open("problems_7.py", "r") as file:
+    for line in file:
+        if line.lstrip().startswith('#'):
+            pass
+        elif len(line.lstrip()) == 0:
+            print(line)
+        else:
+            line_count += 1
+        #lines.append(line.lstrip())
+    #print(lines)
+    print(line_count)
     
 #############################################################################################################################
 '''
