@@ -52,7 +52,6 @@ def lines():
     else:
         sys.exit("Not a python file")
 
-lines()
 #############################################################################################################################
 '''
 Perhaps the most popular place for pizza in Harvard Square is Pinocchio’s Pizza & Subs, aka Noch’s, known for its Sicilian pizza, 
@@ -90,7 +89,32 @@ or if the specified file does not exist, the program should instead exit via sys
 '''
 #############################################################################################################################
 
+import sys
+import csv
+from tabulate import tabulate
 
+def pizza():
+
+    if len(sys.argv) < 2:
+        sys.exit("Too few command-line arguments")
+    elif len(sys.argv) > 2:
+        sys.exit("Too many command-line arguments")
+
+    table = []
+
+    name = sys.argv[1]
+    if name[-4:] == ".csv":
+        with open(name, 'r') as file:
+            contents = csv.reader(file)
+            for row in contents:
+                table.append(row)
+        return tabulate(table,headers='firstrow', tablefmt='grid')
+    else:
+        sys.exit("Not a csv file")
+            
+    
+
+print(pizza())
 
 
      
