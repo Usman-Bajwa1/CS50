@@ -192,7 +192,41 @@ If the user does not provide exactly two command-line arguments, or if the first
 '''
 #############################################################################################################################
 
+import sys
+import csv
 
+def scourgify():
+    if len(sys.argv) < 3:
+        sys.exit("Too few command-line arguments")
+    elif len(sys.argv) > 3:
+        sys.exit("Too many command-line arguments")
+
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
+
+    if input_file[-4:] != '.csv' and output_file[-4:] != '.csv':
+        sys.exit("Not a csv file") 
+
+    ordered_name = {"first":[], "last":[], "house":[]}
+   
+    
+    with open(input_file, 'r') as file:
+        content  = csv.DictReader(file)
+        for row in content:
+            for key in row.keys():
+                if key not in ['name','house']:
+                    sys.exit(f'Could not read {input_file}')
+            name_list = row["name"].split(',')
+            house = row['house']
+            ordered_name['first'].append( name_list[1].lstrip())
+            ordered_name['last'].append(name_list[0])
+            ordered_name['house'].append(house)
+    with open(output_file, 'w') as file:
+        fieldnames = ['first', 'last', 'house']
+        writer = csv.DictWriter(file, fieldnames=fieldnames)
+        writer.writeheader()
+        for i in range(len(ordered_name['first'])):
+            writer.writerow({'first':ordered_name['first'][i], 'last':ordered_name['last'][i], 'house':ordered_name['house'][i]})
           
 
 
