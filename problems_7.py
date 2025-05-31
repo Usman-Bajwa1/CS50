@@ -106,6 +106,26 @@ But do not assume that someone’s hours will start ante meridiem and end post m
 (e.g., 5:00 PM to 9:00 AM).
 Structure working.py as follows, wherein you’re welcome to modify main and/or implement other functions as you see fit, but you may not
 import any other libraries. You’re welcome, but not required, to use re and/or sys.
+import re
+import sys
+
+
+def main():
+    print(convert(input("Hours: ")))
+
+
+def convert(s):
+    ...
+
+
+...
+
+
+if __name__ == "__main__":
+    main()
+
+Either before or after you implement convert in working.py, additionally implement, in a file called test_working.py, three or more functions that 
+collectively test your implementation of convert thoroughly, each of whose names should begin with test_ so that you can execute your tests with:
 '''
 #############################################################################################################################
 
