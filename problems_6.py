@@ -262,11 +262,13 @@ virtual shirt in any of CS50’s communities!
 '''
 #############################################################################################################################
 
-from PIL import Image
+from PIL import Image, ImageOps
 import sys
 
-with Image.open(sys.argv[1]) as shirt:
-    sh,sw = shirt.size
-
-with Image.open(sys.argv[2]) as back:
-    bh, bw = back.size
+shirt = Image.open(sys.argv[1])
+sh,sw = shirt.size
+before = Image.open(sys.argv[2])
+bh, bw = before.size
+resized = ImageOps.fit(before, size = (sh,sw))
+Image.Image.paste(resized,shirt,  mask = shirt)
+resized.show()
