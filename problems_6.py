@@ -263,8 +263,10 @@ virtual shirt in any of CS50’s communities!
 #############################################################################################################################
 
 from PIL import Image
+import sys
 
-with Image.open("./shirt.png") as shirt:
-    h,w = shirt.size
+with Image.open(sys.argv[1]) as shirt:
+    sh,sw = shirt.size
 
-print(h,w)
+with Image.open(sys.argv[2]) as back:
+    bh, bw = back.size
