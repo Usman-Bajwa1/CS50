@@ -270,7 +270,13 @@ def shirt():
         sys.exit("Too few command-line arguments")
     elif len(sys.argv) > 3:
         sys.exit("Too many command-line arguments")
-    
+    elif not sys.argv[1].lower().endswith((".png", ".jpg", ".jpeg")):
+        sys.exit("Invalid Input")
+    elif not sys.argv[2].lower().endswith((".png", ".jpg", ".jpeg")):
+        sys.exit("Invalid Output")
+    elif sys.argv[1][-3:] != sys.argv[2][-3:]:
+        sys.exit("Input and Output have different extensions")
+
     shirt = Image.open("./shirt.png")
     sh,sw = shirt.size
     before = Image.open(sys.argv[1])
