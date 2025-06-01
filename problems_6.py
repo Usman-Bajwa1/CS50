@@ -265,10 +265,18 @@ virtual shirt in any of CS50’s communities!
 from PIL import Image, ImageOps
 import sys
 
-shirt = Image.open(sys.argv[1])
-sh,sw = shirt.size
-before = Image.open(sys.argv[2])
-bh, bw = before.size
-resized = ImageOps.fit(before, size = (sh,sw))
-Image.Image.paste(resized,shirt,  mask = shirt)
-resized.show()
+def shirt():
+    if len(sys.argv) < 3:
+        sys.exit("Too few command-line arguments")
+    elif len(sys.argv) > 3:
+        sys.exit("Too many command-line arguments")
+    
+    shirt = Image.open("./shirt.png")
+    sh,sw = shirt.size
+    before = Image.open(sys.argv[1])
+    bh, bw = before.size
+    resized = ImageOps.fit(before, size = (sh,sw))
+    Image.Image.paste(resized,shirt,  mask = shirt)
+    resized.save(sys.argv[2])
+
+shirt()
