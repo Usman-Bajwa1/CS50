@@ -284,5 +284,3 @@ def shirt():
     resized = ImageOps.fit(before, size = (sh,sw))
     Image.Image.paste(resized,shirt,  mask = shirt)
     resized.save(sys.argv[2])
-
-shirt()
